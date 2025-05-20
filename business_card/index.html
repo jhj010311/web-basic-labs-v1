@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                display: grid;
+                grid-template-areas:
+                    "header header  header"
+                    "....   ....    ...."
+                    "name   name    name"
+                    "logo   address contact";
+                grid-template-columns: repeat(auto-fill, minmax(33%, auto));
+            }
+
+            .header {
+                grid-area: header;
+                background-color: gray;
+            }
+
+            .name {
+                grid-area: name;
+            }
+
+            .logo {
+                grid-area: logo;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .address {
+                grid-area: address;
+                align-self: center;
+            }
+
+            .contact {
+                grid-area: contact;
+                align-self: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item header">
+                To: Your recipient<br />
+                <strong>Subject: My new email signature</strong>
+            </div>
+            <div class="item name">
+                <h1>장현준</h1>
+                <h4>새싹 교육생</h4>
+            </div>
+            <div class="item logo">
+                <img
+                    src="https://img.lovepik.com/free-png/20210924/lovepik-snowflake-beautiful-ice-crystal-winter-cold-snow-png-image_401314907_wh1200.png"
+                    width="80%"
+                />
+            </div>
+            <div class="item address">
+                123 Anywhere St,<br />
+                Any city, ST 12345
+            </div>
+            <div class="item contact">
+                hello@reallygreatsite.com<br />
+                www.reallygreatsite.com<br />
+                + 123-456-7890<br />
+            </div>
+        </div>
+    </body>
+</html>
