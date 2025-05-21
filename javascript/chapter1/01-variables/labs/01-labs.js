@@ -3,15 +3,14 @@
 
 function scopePractice() {
     if (true) {
-      var x = 10;
-      let y = 20;
-      const z = 30;
+        var x = 10;
+        let y = 20;
+        const z = 30;
     }
-  
-    console.log("x:", x); // ?
-    console.log("y:", y); // ?
-    console.log("z:", z); // ?
-  }
-  
-  scopePractice();
-  
+
+    console.log("x:", x); // var는 함수스코프
+    // console.log("y:", y); // let은 블록스코프
+    // console.log("z:", z); // const는 블록스코프
+}
+
+scopePractice();
