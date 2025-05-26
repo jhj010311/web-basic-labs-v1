@@ -3,9 +3,13 @@
 */
 
 const cart = [
-  { name: "Keyboard", price: 30000 },
-  { name: "Mouse", price: 15000 },
-  { name: "Monitor", price: 200000 },
+    { name: "Keyboard", price: 30000 },
+    { name: "Mouse", price: 15000 },
+    { name: "Monitor", price: 200000 },
 ];
 
 // TODO: reduce로 총합 계산
+// const total = cart.reduce((sum, item) => sum + Number(item.price), 0);
+const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+console.log(total);

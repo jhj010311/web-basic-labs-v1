@@ -1,13 +1,16 @@
 // 클로저 : 외부 변수를 기억하는 함수
 // 함수 내부의 상태를 기억하고 캡슐화를 완전한 은닉이 가능
 
-function createCounter() {
-  let count = 0; // 외부에서는 접근 불가한 private 변수
+// 전역변수로 선언해서 사용하는 것도 가능하지만 전역변수는 전역이니까 다른 곳에서 건드릴 수 있음(자바 public)
+// 제대로 된 캡슐화(자바 private)를 실현하려면 클로저를 이용해야함
 
-  return function () {
-    count++;
-    console.log(`현재 카운트: ${count}`);
-  };
+function createCounter() {
+    let count = 0; // 외부에서는 접근 불가한 private 변수
+
+    return function () {
+        count++;
+        console.log(`현재 카운트: ${count}`);
+    };
 }
 
 const counter = createCounter();

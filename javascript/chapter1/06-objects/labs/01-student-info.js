@@ -2,10 +2,16 @@
 // 그 후 각 속성을 출력해보세요.
 
 const student = {
-  // 여기에 name, age, major 추가
+    // 여기에 name, age, major 추가
+    name: "차민재",
+    age: "28",
+    major: "회계학",
 };
 
 // 예시 출력:
 // 이름: 윤학생
 // 나이: 21
 // 전공: 컴퓨터공학
+console.log(`이름: ${student.name}`);
+console.log(`나이: ${student["age"]}`);
+console.log(`전공: ${student.major}`);

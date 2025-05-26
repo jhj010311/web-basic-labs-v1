@@ -6,3 +6,6 @@ const classA = ["김학생", "이학생"];
 const classB = ["윤학생", "서학생"];
 
 // TODO: concat 사용
+const all = classA.concat(classB);
+
+console.log(all);
