@@ -15,3 +15,5 @@ for (let word of bannedWords) {
     }
 }
 console.log(ban);
+
+console.log(bannedWords.some((word) => input.includes(word)));

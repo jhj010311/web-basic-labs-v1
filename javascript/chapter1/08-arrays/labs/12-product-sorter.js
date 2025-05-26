@@ -3,9 +3,20 @@
 */
 
 const products = [
-  { name: "Laptop", price: 1500000 },
-  { name: "Tablet", price: 600000 },
-  { name: "Phone", price: 1000000 },
+    { name: "Laptop", price: 1500000 },
+    { name: "Tablet", price: 600000 },
+    { name: "Phone", price: 1000000 },
 ];
 
 // TODO: sort 사용 (price 기준 오름차순)
+products.forEach((product) => {
+    console.log(product);
+});
+
+console.log("---정렬---");
+
+products
+    .sort((a, b) => a.price - b.price)
+    .forEach((product) => {
+        console.log(product);
+    });
