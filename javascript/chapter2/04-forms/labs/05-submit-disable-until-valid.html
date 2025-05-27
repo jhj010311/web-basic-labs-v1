@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <form>
-      <input type="text" id="email2" placeholder="이메일" />
-      <input type="password" id="pw2" placeholder="비밀번호" />
-      <button id="okBtn" disabled>확인</button>
-    </form>
-    <script>
-      // TODO: 둘 다 값이 있으면 버튼 활성화, 아니면 비활성화
-    </script>
-  </body>
+    <body>
+        <form>
+            <input type="text" id="email2" placeholder="이메일" />
+            <input type="password" id="pw2" placeholder="비밀번호" />
+            <button id="okBtn" disabled>확인</button>
+        </form>
+        <script>
+            // TODO: 둘 다 값이 있으면 버튼 활성화, 아니면 비활성화
+
+            // const form = document.getElementsByTagName("form");
+            // 배열로 반환되기 때문에 addEventListener 불가
+
+            const form = document.querySelector("form");
+            const email2 = document.getElementById("email2");
+            const pw2 = document.getElementById("pw2");
+            const okBtn = document.getElementById("okBtn");
+
+            form.addEventListener("input", (e) => {
+                if (email2.value.length > 0 && pw2.value.length > 0) {
+                    okBtn.disabled = false;
+                } else {
+                    okBtn.disabled = true;
+                }
+            });
+        </script>
+    </body>
 </html>

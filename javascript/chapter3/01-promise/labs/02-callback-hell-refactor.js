@@ -26,3 +26,35 @@ getUserId((err, userId) => {
   });
 });
 */
+
+function getUserId() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({ id: 7 });
+        }, 500);
+    });
+}
+function getUserProfile(userId) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({ userId, nickname: "닉네임" });
+        }, 500);
+    });
+}
+
+function getUserOrders(profile, callback) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve([
+                `${profile.nickname}의 주문1`,
+                `${profile.nickname}의 주문2`,
+            ]);
+        }, 500);
+    });
+}
+
+getUserId()
+    .then((userId) => getUserProfile(userId))
+    .then((profile) => getUserOrders(profile))
+    .then((orders) => console.log("최종 주문 목록:", orders))
+    .catch((err) => console.error(err));

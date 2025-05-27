@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <form id="emailForm">
-      <input type="text" id="email" placeholder="이메일" />
-      <button>확인</button>
-    </form>
-    <p id="error"></p>
-    <script>
-      // TODO: .includes("@") 검사, 올바르면 "확인됨", 아니면 에러 메시지
-    </script>
-  </body>
+    <body>
+        <form id="emailForm">
+            <input type="text" id="email" placeholder="이메일" />
+            <button>확인</button>
+        </form>
+        <p id="error"></p>
+        <script>
+            // TODO: .includes("@") 검사, 올바르면 "확인됨", 아니면 에러 메시지
+            const emailForm = document.getElementById("emailForm");
+            const email = document.getElementById("email");
+            const error = document.getElementById("error");
+
+            emailForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                if (email.value.includes("@")) {
+                    error.textContent = "확인됨";
+                } else {
+                    error.textContent = "올바른 이메일 형식이 아닙니다";
+                }
+            });
+        </script>
+    </body>
 </html>

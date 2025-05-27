@@ -12,3 +12,16 @@ https://jsonplaceholder.typicode.com/users/3
 - 3명의 이름(name)만 배열로 출력할 것 (예: ["Leanne", "Ervin", "Clementine"])
 - 에러가 발생하면 "요청 실패" 메시지를 출력하세요.
 */
+
+async function fetchUser() {
+    const response = await Promise.all([
+        fetch("https://jsonplaceholder.typicode.com/users/"),
+        fetch("https://jsonplaceholder.typicode.com/users/"),
+        fetch("https://jsonplaceholder.typicode.com/users/"),
+    ]);
+
+    const users = await response.data.json();
+    console.log(users);
+}
+
+// 잘못된 단원의 문제?

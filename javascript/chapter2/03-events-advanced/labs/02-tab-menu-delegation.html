@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <ul id="tabs">
-      <li data-tab="1">상세정보</li>
-      <li data-tab="2">리뷰</li>
-      <li data-tab="3">Q&A</li>
-    </ul>
-    <p id="result">탭을 선택하세요</p>
+    <body>
+        <ul id="tabs">
+            <li data-tab="1">상세정보</li>
+            <li data-tab="2">리뷰</li>
+            <li data-tab="3">Q&A</li>
+        </ul>
+        <p id="result">탭을 선택하세요</p>
 
-    <script>
-      // TODO:
-      // ul에 이벤트 등록
-      // li 클릭 시 result 텍스트를 "선택된 탭: 상세정보" 등으로 변경
-    </script>
-  </body>
+        <script>
+            // TODO:
+            // ul에 이벤트 등록
+            // li 클릭 시 result 텍스트를 "선택된 탭: 상세정보" 등으로 변경
+            const tabs = document.getElementById("tabs");
+            const result = document.getElementById("result");
+
+            tabs.addEventListener("click", (e) => {
+                // e.target.tagName은 항상 대문자로 나온다
+                // data-tab 같은 특수한 속성은 가져올 방법을 잘 알아봐야 한다
+                if (e.target.tagName === "LI") {
+                    result.textContent = `선택된 탭: ${e.target.dataset.tab}. ${e.target.textContent}`;
+                }
+            });
+        </script>
+    </body>
 </html>

@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <form id="agreeForm">
-      <label><input type="checkbox" id="chk" /> 약관 동의</label>
-      <button>제출</button>
-    </form>
-    <p id="output"></p>
-    <script>
-      // TODO: 체크 안 되어 있으면 제출 막고 메시지 출력
-    </script>
-  </body>
+    <body>
+        <form id="agreeForm">
+            <label><input type="checkbox" id="chk" /> 약관 동의</label>
+            <button>제출</button>
+        </form>
+        <p id="output"></p>
+        <script>
+            // TODO: 체크 안 되어 있으면 제출 막고 메시지 출력
+            const agreeForm = document.getElementById("agreeForm");
+            const chk = document.getElementById("chk");
+            const output = document.getElementById("output");
+
+            agreeForm.addEventListener("submit", (e) => {
+                if (!chk.checked) {
+                    e.preventDefault();
+                    output.textContent = "약관에 동의하셔야 진행할 수 있습니다";
+                }
+            });
+        </script>
+    </body>
 </html>
