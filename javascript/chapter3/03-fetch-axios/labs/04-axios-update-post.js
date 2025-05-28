@@ -6,3 +6,22 @@ PUT: https://jsonplaceholder.typicode.com/posts/1
 - 수정할 내용: { title: "Updated Title", body: "Updated Body", userId: 1 }
 - 응답 결과를 콘솔에 출력하세요
 */
+
+import axios from "axios";
+
+async function putAxios() {
+    const editPost = {
+        title: "Updated Title",
+        body: "Updated Body",
+        userId: 1,
+    };
+
+    const response = await axios.put(
+        "https://jsonplaceholder.typicode.com/posts/1",
+        editPost
+    );
+
+    console.log("수정된 게시글:", response.data);
+}
+
+putAxios();

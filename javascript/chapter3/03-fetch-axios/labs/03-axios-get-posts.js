@@ -4,3 +4,28 @@
 
 GET: https://jsonplaceholder.typicode.com/posts
 */
+
+import axios from "axios";
+
+async function fetchTitle() {
+    try {
+        const response = await axios.get(
+            "https://jsonplaceholder.typicode.com/posts"
+        );
+        const data = await response.data;
+
+        return data;
+    } catch (err) {
+        console.error("에러:", err);
+    }
+}
+
+async function main() {
+    const data = await fetchTitle();
+
+    for (let d of data) {
+        console.log(d.title);
+    }
+}
+
+main();

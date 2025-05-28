@@ -9,4 +9,33 @@ function asyncJob(ms) {
 - 2) Promise.all과 await로 병렬 실행
 
 각 방식에서 콘솔로 각 작업의 시작/끝, 전체 소요시간을 출력해보세요.
+
+console.time("순차");
+순차코드
+console.timeEnd("순차");
+
+console.time("병렬");
+병렬코드
+console.timeEnd("병렬");
 */
+
+function asyncJob(ms) {
+    return new Promise((resolve) => setTimeout(() => resolve(ms), ms));
+}
+
+async function seq() {
+    console.time("순차");
+    await asyncJob(1000);
+    await asyncJob(1000);
+    await asyncJob(1000);
+    console.timeEnd("순차");
+}
+
+async function parallel() {
+    console.time("병렬");
+    await Promise.all([asyncJob(1000), asyncJob(1000), asyncJob(1000)]);
+    console.timeEnd("병렬");
+}
+
+seq();
+parallel();
