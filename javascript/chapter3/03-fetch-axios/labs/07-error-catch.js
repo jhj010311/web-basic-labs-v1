@@ -6,3 +6,5 @@
 
 - 에러 메시지와 HTTP 상태 코드를 콘솔에 출력
 */
+
+import axios from "axios";
